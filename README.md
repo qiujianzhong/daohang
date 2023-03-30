@@ -17,6 +17,10 @@
 ### 二、具体使用
 
 ```cpp
+升级pip3
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+
 git clone https://github.com/qiujianzhong/daohang.git
 cd daohang
 pipenv install && pipenv shell #创建/安装/进入虚拟环境
@@ -50,6 +54,18 @@ http://ip:8080
     后台管理账号密码: 
     admin:zhuima
     #如果后台无法正常登录，可能是安装的Django版本不对
+~~~
+root编译安装sqlite3
+
+wget -O /tmp/sqlite-autoconf-3340000.tar.gz  https://www.sqlite.org/2020/sqlite-autoconf-3340000.tar.gz
+tar zxvf /tmp/sqlite-autoconf-3340000.tar.gz -C /tmp
+cd /tmp/sqlite-autoconf-3340000 || exit && ./configure --prefix=/usr/local && make && make install
+mv /usr/bin/sqlite3  /usr/bin/sqlite3_backup
+ln -s /usr/local/bin/sqlite3   /usr/bin/sqlite3
+echo "/usr/local/lib" > /etc/ld.so.conf.d/sqlite3.conf
+ldconfig
+sqlite3 -version
+~~~
 
 
 ### 六、效果
