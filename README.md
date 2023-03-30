@@ -17,10 +17,12 @@
 ### 二、具体使用
 
 ```cpp
-0、git clone https://github.com/zhuima/daohang.git
-1、cd daohang && pipenv install && pipenv shell
-2、python manage.py runserver 0.0.0.0:8080
-3、http://ip:8080
+git clone https://github.com/qiujianzhong/daohang.git
+cd daohang
+pipenv install && pipenv shell #创建/安装/进入虚拟环境
+#如果上一步无法正常创建进行，使用本机Python环境： pip install -r requirements.txt  
+python manage.py runserver 0.0.0.0:8080
+http://ip:8080
 ```
 
 ### 三、docker支持
@@ -47,6 +49,7 @@
     后台登录地址: http://ip:port/signin
     后台管理账号密码: 
     admin:zhuima
+    #如果后台无法正常登录，可能是安装的Django版本不对
 
 
 ### 六、效果
